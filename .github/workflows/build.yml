@@ -14,19 +14,19 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+        os: [macos-latest, blacksmith-2vcpu-ubuntu-2204, windows-latest]
 
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v3
 
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: useblacksmith/setup-node@v5
         with:
           node-version: 20
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: useblacksmith/setup-python@v6
         with:
           python-version: 3.x
 
